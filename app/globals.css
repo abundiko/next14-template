@@ -2,26 +2,55 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .app-container {
+    @apply px-4 sm:px-6 md:px-8 lg:px-10 xl:px-16 2xl:px-20;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 text-label;
+  }
+  .filter-btn {
+    @apply inline-flex bg-light border py-3 rounded-lg text-black-400 font-semibold text-label gap-2 justify-center items-center;
+  }
+  .search-filter-btn {
+    @apply flex gap-1.5 justify-center app-select-new !px-4 font-semibold !text-black-400 items-center;
+  }
+  .btn-primary {
+    @apply btn-primary-tiny r-font-semibold text-lg py-2.5 hover:bg-black-600;
+  }
+  .btn-light {
+    @apply btn-light-tiny font-semibold text-lg py-2.5;
+  }
+  .btn-transparent {
+    @apply bg-transparent border text-label py-2 rounded-3xl inline-flex justify-center items-center text-primary gap-1;
+  }
+  .btn-primary-border {
+    @apply btn-primary-tiny-border font-semibold text-lg py-2;
+  }
+  .delete-btn {
+    @apply btn gap-1.5 text-danger rounded-md hover:bg-red-100 px-1.5 text-label font-semibold;
+  }
+  .edit-btn {
+    @apply btn gap-1.5 text-primary rounded-md hover:bg-blue-100 px-1.5 text-label font-semibold;
+  }
+
+  .app-input {
+    @apply bg-light w-full border border-black-100 outline-primary text-dark-text py-2.5 text-sm pe-3 rounded-lg read-only:opacity-70 read-only:pointer-events-none;
+  }
+  .app-select {
+    @apply bg-light w-full border border-black-100 outline-primary text-dark-text py-2.5  pe-3 rounded-lg;
+  }
+  .info-box {
+    @apply bg-[#00000011] rounded p-2 font-semibold w-full;
+  }
+  .skeleton {
+    @apply bg-[#00000022] rounded-md animate-pulse;
+  }
+  .pagination-button {
+    @apply flex items-center justify-center px-4 h-10 ms-0 leading-tight  bg-white border border-black-50 rounded-lg hover:bg-black-50 data-[active="true"]:text-light data-[active="true"]:bg-black-500 text-dark;
+  }
+  .avatar {
+    @apply !rounded-full aspect-square overflow-hidden object-cover profile-img;
   }
 }
